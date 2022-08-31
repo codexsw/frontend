@@ -12,9 +12,9 @@ const customJestConfig = {
     '~/(.*)$': '<rootDir>/src/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testPathIgnorePatterns: ['<rootDir>/cypress'],
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/src/components', '<rootDir>/src/tests'],
   collectCoverageFrom: [
     '!<rootDir>/src/**/*.{types,schema,const,validation}.{ts,tsx}',
   ],
