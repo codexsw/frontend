@@ -1,14 +1,20 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Hello } from './Hello'
+import { action } from '@storybook/addon-actions'
+import { HelloView } from './HelloView'
 
 export default {
-  component: Hello,
+  component: HelloView,
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof Hello>
+} as ComponentMeta<typeof HelloView>
 
-const Template: ComponentStory<typeof Hello> = () => <Hello />
+const Template: ComponentStory<typeof HelloView> = ({ ...args }) => (
+  <HelloView {...args} />
+)
 
 export const Base = Template.bind({})
-Base.args = {}
+Base.args = {
+  name: 'John Doe',
+  onQuery: action('onQuery'),
+}

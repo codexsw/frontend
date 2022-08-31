@@ -1,7 +1,19 @@
-import { FC } from 'react'
+import { fetcher } from 'lib/fetcher'
+import { FC, useState } from 'react'
+import useSWR from 'swr'
+import { HelloApiResponse } from './api'
+import { HelloView } from './HelloView'
 
-export const Hello: FC = () => (
-  <div className='flex min-h-screen flex-col items-center justify-center bg-blue-50 py-2 text-red-200'>
-    Hello
-  </div>
-)
+export const Hello: FC = () => {
+  const [query, setQuery] = useState(false)
+  const { data } = useSWR<HelloApiResponse>(
+    query ? '/api/hello' : null,
+    fetcher
+  )
+
+  const handleSetQuery = () => {
+    setQuery(true)
+  }
+
+  return <HelloView name={data && data.name} onQuery={handleSetQuery} />
+}
