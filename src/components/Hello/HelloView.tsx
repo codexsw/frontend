@@ -10,6 +10,7 @@ export const HelloView: FC<HelloViewProps> = ({ name, onQuery }) => {
     <div className='flex min-h-screen flex-col items-center justify-center bg-blue-50'>
       <div
         onClick={onQuery}
+        data-testid='hello-view-box'
         className='relative flex  max-w-[500px] cursor-pointer flex-col gap-6 overflow-hidden rounded-lg border border-gray-100 bg-white p-8'
       >
         <span className='absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600'></span>
@@ -55,7 +56,9 @@ export const HelloView: FC<HelloViewProps> = ({ name, onQuery }) => {
             <dt className='text-sm font-medium text-gray-600'>
               Server Response
             </dt>
-            <dd className='text-xs text-gray-500'>{name || '-'}</dd>
+            <dd data-testid='name-box' className='text-xs text-gray-500'>
+              {name || '-'}
+            </dd>
           </div>
         </div>
       </div>

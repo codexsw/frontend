@@ -9,7 +9,9 @@
     "test": "jest --coverage",
     "test:snapshot": "jest -u",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -41,6 +43,7 @@
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "cypress": "^10.7.0",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
