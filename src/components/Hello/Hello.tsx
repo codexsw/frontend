@@ -1,5 +1,5 @@
 import { fetcher } from 'lib/fetcher'
-import { FC, useState } from 'react'
+import { FC, useCallback, useState } from 'react'
 import useSWR from 'swr'
 import { HelloApiResponse } from './api'
 import { HelloView } from './HelloView'
@@ -11,10 +11,9 @@ export const Hello: FC = () => {
     fetcher
   )
 
-  const handleSetQuery = () => {
-    // setQuery(true)
-    throw new Error('Error on query')
-  }
+  const handleSetQuery = useCallback(() => {
+    setQuery(true)
+  }, [])
 
   return <HelloView name={data && data.name} onQuery={handleSetQuery} />
 }
