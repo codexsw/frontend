@@ -12,7 +12,8 @@ export const Hello: FC = () => {
   )
 
   const handleSetQuery = () => {
-    setQuery(true)
+    // setQuery(true)
+    throw new Error('Error on query')
   }
 
   return <HelloView name={data && data.name} onQuery={handleSetQuery} />
