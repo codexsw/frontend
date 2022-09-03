@@ -65,10 +65,9 @@ $ yarn cy:run
 
 Settings or variables used by the application. Use the `.env.example` file and copy to a `.env` file replacing settings accordingly.
 
-| Name                                      | Description                                                            | Default value           |
-| ----------------------------------------- | ---------------------------------------------------------------------- | ----------------------- |
-| `NEXT_PUBLIC_API_URL`                     | API base url                                                           | `http://localhost:3001` |
-| `NEXT_PUBLIC_LAUNCHDARKLY_CLIENT_SIDE_ID` | LaunchDarkly Client ID. Use 'dashboard-staging' for local development. | `undefined`             |
+| Name                  | Description  | Default value           |
+| --------------------- | ------------ | ----------------------- |
+| `NEXT_PUBLIC_API_URL` | API base url | `http://localhost:3001` |
 
 ### Auth0
 

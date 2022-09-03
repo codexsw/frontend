@@ -2,7 +2,7 @@ import 'styles/globals.css'
 import type { AppProps } from 'next/app'
 import { UserProvider } from '@auth0/nextjs-auth0'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <UserProvider>
       <Component {...pageProps} />
@@ -10,4 +10,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default App
