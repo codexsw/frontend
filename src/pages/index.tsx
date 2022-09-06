@@ -1,4 +1,4 @@
-import { Hello } from 'components/Hello'
+import { Hello } from 'components/hello'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {

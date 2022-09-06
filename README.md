@@ -95,3 +95,37 @@ This frontend application uses [Sentry](https://sentry.io/) for tracking runtime
 | `SENTRY_URL`             | Sentry URL                           | `https://sentry.io/` |
 | `SENTRY_ORG`             | Sentry organization                  | `codexsw`            |
 | `SENTRY_PROJECT`         | Sentry organization                  | `frontend`           |
+
+## Generators
+
+This repo uses [plop](https://plopjs.com/) generators to help you quickly create different app elements: components, services, pages, tests
+
+### Components
+
+To generate a component, using the plop generator for `component` with the parameters `ComponentName` (in PascalCase) and the `folderName` (in kebab-case)
+
+```
+$ yarn plop component <ComponentName> <component/folder>
+```
+
+Ex:
+
+```
+$ yarn plop component Slider components/slider
+$ plop --plopfile .plop/plopfile.js component Slider components/slider
+✔  ++ /Users/dev/Documents/frontend/src/components/slider/Slider.tsx
+✔  ++ /Users/dev/Documents/frontend/src/components/slider/index.ts
+✨  Done in 1.36s.
+```
+
+this generator will also generate an `index.ts` on the folder if doesn't exists and also a Storybook story if the component
+ends up in `View`
+
+```
+$ yarn plop component SliderView components/slider
+$ plop --plopfile .plop/plopfile.js component SliderView components/slider
+✔  ++ /Users/dev/Documents/frontend/src/components/slider/SliderView.tsx
+✔  ++ /Users/dev/Documents/frontend/src/components/slider/SliderView.stories.tsx
+✔  ++ /Users/dev/Documents/frontend/src/components/slider/index.ts
+✨  Done in 1.93s.
+```

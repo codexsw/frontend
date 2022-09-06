@@ -11,7 +11,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "plop": "plop --plopfile .plop/plopfile.js"
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.2",
@@ -68,6 +69,7 @@
     "jest": "^29.0.1",
     "jest-environment-jsdom": "^29.0.1",
     "lint-staged": "^13.0.3",
+    "plop": "^3.1.1",
     "postcss": "^8.4.14",
     "storybook-addon-next": "^1.6.7",
     "tailwindcss": "^3.1.2",

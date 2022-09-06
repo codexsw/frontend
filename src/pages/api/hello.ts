@@ -1,4 +1,4 @@
-import { HelloApiResponse } from 'components/Hello/api'
+import { HelloApiResponse } from 'components/hello/api'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default function handler(
