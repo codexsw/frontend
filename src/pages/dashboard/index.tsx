@@ -1,11 +1,12 @@
 import { useUser } from '@auth0/nextjs-auth0'
+import { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import { FC, useCallback } from 'react'
+import { useCallback } from 'react'
 import { withPageAuthRequired } from 'services/auth0'
 
 export const getServerSideProps = withPageAuthRequired()
 
-const Dashboard: FC = () => {
+const Dashboard: NextPage = () => {
   const router = useRouter()
   const { user } = useUser()
 

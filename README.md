@@ -102,7 +102,7 @@ This repo uses [plop](https://plopjs.com/) generators to help you quickly create
 
 ### Components
 
-To generate a component, using the plop generator for `component` with the parameters `ComponentName` (in PascalCase) and the `folderName` (in kebab-case)
+To generate a component, using the plop generator for `component` with the parameters `ComponentName` (in PascalCase) and the `component/folder` (in kebab-case)
 
 ```
 $ yarn plop component <ComponentName> <component/folder>
@@ -112,10 +112,6 @@ Ex:
 
 ```
 $ yarn plop component Slider components/slider
-$ plop --plopfile .plop/plopfile.js component Slider components/slider
-✔  ++ /Users/dev/Documents/frontend/src/components/slider/Slider.tsx
-✔  ++ /Users/dev/Documents/frontend/src/components/slider/index.ts
-✨  Done in 1.36s.
 ```
 
 this generator will also generate an `index.ts` on the folder if doesn't exists and also a Storybook story if the component
@@ -123,9 +119,36 @@ ends up in `View`
 
 ```
 $ yarn plop component SliderView components/slider
-$ plop --plopfile .plop/plopfile.js component SliderView components/slider
-✔  ++ /Users/dev/Documents/frontend/src/components/slider/SliderView.tsx
-✔  ++ /Users/dev/Documents/frontend/src/components/slider/SliderView.stories.tsx
-✔  ++ /Users/dev/Documents/frontend/src/components/slider/index.ts
-✨  Done in 1.93s.
 ```
+
+### Pages
+
+To generate a NextJS page, use the plop generator for `page` with the parameters `PageName` (in PascalCase) and the `page/folder` (in kebab-case)
+
+```
+$ yarn plop page <PageName> <page/folder>
+```
+
+Ex:
+
+```
+$ yarn plop page About
+```
+
+Will create the `/pages/about.tsx` page
+
+```
+$ yarn plop page Index about
+```
+
+Will create the `/pages/about/index.tsx` page
+
+You can also use dynamic paths
+
+```
+$ yarn plop page Index post/[pid]
+$ yarn plop page Edit post/[pid]/edit
+```
+
+Will create `/pages/post/[pid]/index.tsx` and
+`/pages/post/[pid]/edit.tsx`.
