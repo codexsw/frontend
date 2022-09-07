@@ -17,7 +17,7 @@ module.exports.componentGenerator = (plop) => {
     return [
       {
         type: 'add',
-        path: `../src/${!componentFolder ? 'component/' : ''}${
+        path: `../src/${!componentFolder ? 'components/' : ''}${
           componentFolder || toKebabCase(componentName)
         }/${componentName}.tsx`,
         templateFile: 'component/templates/component.tsx.hbs',
@@ -26,7 +26,7 @@ module.exports.componentGenerator = (plop) => {
         ? [
             {
               type: 'add',
-              path: `../src/${!componentFolder ? 'component/' : ''}${
+              path: `../src/${!componentFolder ? 'components/' : ''}${
                 componentFolder || toKebabCase(componentName)
               }/${componentName}.stories.tsx`,
               templateFile: 'component/templates/component.stories.tsx.hbs',
@@ -35,7 +35,7 @@ module.exports.componentGenerator = (plop) => {
         : []),
       {
         type: 'add',
-        path: `../src/${!componentFolder ? 'component/' : ''}${
+        path: `../src/${!componentFolder ? 'components/' : ''}${
           componentFolder || toKebabCase(componentName)
         }/index.ts`,
         skipIfExists: true,
